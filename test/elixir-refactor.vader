@@ -1,0 +1,66 @@
+" This isn't meant to be a comprehensive test, for that check out the unit
+" tests in ../refactor/test. These are to asses that the plugin compiles, is
+" registered, and otherwise works
+
+" Before:
+"   UpdateRemotePlugins
+"   " Assert that a channel was started, you'll see and error message anyways if
+"   " it didn't.
+"   AssertEqual type(remote#host#Require("elixir")), v:t_number
+
+Given elixir (local call):
+  defmodule Foo do
+    def bar() do
+      do_foo(1)
+    end
+  end
+
+Execute:
+  " Move to 'do_foo'
+  /do_foo
+  normal w
+  " Call refactor command
+  ElixirRefactorPipe
+
+Expect elixir:
+  defmodule Foo do
+    def bar() do
+      1 |> do_foo()
+    end
+  end
+
+
+" Given elixir (local call):
+"   foo(1)
+
+" Execute (pipe line):
+"   ElixirRefactorPipe
+
+" Expect (piped local function):
+"   1 |> foo()
+
+" Execute (unpipe line):
+"   ElixirRefactorUnpipe
+
+" Expect (local call):
+"   foo(1)
+
+" Given elixir (function inside another structure):
+"   [1, 2, 3, foo(x)]
+
+" Execute (move cursor to `foo(x)` and pipe):
+"   normal f(
+"   ElixirRefactorPipe
+
+" Expect (just the function `foo(x)` was transformed):
+"   [1, 2, 3, x |> foo()]
+
+" Given elixir (piped function inside another structure):
+"   [1, 2, 3, x |> foo()]
+
+" Execute (move cursor to `foo()` and unpipe):
+"   normal f(
+"   ElixirRefactorUnpipe
+
+" Expect (just the function `x |> foo()` was transformed):
+"   [1, 2, 3, foo(x)]

@@ -1,0 +1,8 @@
+filetype off
+set runtimepath+=~/.nvim/plugged/vader.vim
+set runtimepath+=~/code/github.com/Dkendal/neovim-elixir/vim-elixir-host
+set runtimepath+=./
+set nobackup
+set noswapfile
+filetype plugin indent on
+syntax enable

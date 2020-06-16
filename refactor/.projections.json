@@ -1,0 +1,37 @@
+{
+  "lib/*.ex": {
+    "alternate": "test/{}_test.exs",
+    "console": null,
+    "dispatch": null,
+    "make": null,
+    "path": null,
+    "start": null,
+    "template": [
+      "defmodule {capitalize|camelcase|dot} do",
+      "end",
+      ""
+    ],
+    "type": "Lib"
+  },
+  "test/*_test.exs": {
+    "alternate": "lib/{}.ex",
+    "console": null,
+    "dispatch": null,
+    "make": null,
+    "path": null,
+    "start": null,
+    "template": [
+      "defmodule {capitalize|camelcase|dot}Test do",
+      "  use ExUnit.Case",
+      "  alias {capitalize|camelcase|dot}",
+      "  doctest {capitalize|camelcase|dot}",
+      "",
+      "  test \"does the thing\" do",
+      "  assert 1 == 1",
+      "  end",
+      "end",
+      ""
+    ],
+    "type": "Test"
+  }
+}

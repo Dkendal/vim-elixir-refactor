@@ -1,0 +1,7 @@
+%{
+  "logger_file_backend": {:hex, :logger_file_backend, "0.0.11", "3bbc5f31d3669e8d09d7a9443e86056fae7fc18e45c6f748c33b8c79a7e147a1", [:mix], [], "hexpm", "62be826f04644c62b0a2bc98a13e2e7ae52c0a4eda020f4c59d7287356d5e445"},
+  "message_pack": {:git, "https://github.com/awetzel/msgpack-elixir.git", "1fd6cebc501a77754e409e39b9b78648e13127c4", [branch: "unpack_map_as_map"]},
+  "procket": {:git, "https://github.com/msantos/procket.git", "cf1a48468a97baa62e8152c8b54809e2414e61e6", [branch: "master"]},
+  "redbug": {:hex, :redbug, "1.2.2", "366d8961770ddc7bb5d209fbadddfa7271005487f938c087a0e385a57abfee33", [:rebar3], [], "hexpm", "b5fe7b94e487be559cb0ec1c0e938c9761205d3e91a96bf263bdf1beaebea729"},
+  "rexbug": {:hex, :rexbug, "1.0.4", "b9908d95da835c7353ef051bc587662c9054fa3c0c11e96de9bad7fe18460aad", [:mix], [{:mix_test_watch, ">= 0.5.0", [hex: :mix_test_watch, repo: "hexpm", optional: true]}, {:redbug, "~> 1.2", [hex: :redbug, repo: "hexpm", optional: false]}], "hexpm", "4826565f39e617fa0eea3e916f02928b2f1d880bf5e084cb80da86a3e369390e"},
+}
